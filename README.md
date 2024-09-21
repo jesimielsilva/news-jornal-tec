@@ -88,7 +88,7 @@ Este projeto faz uso de várias bibliotecas para fornecer funcionalidades espec�
 ### 1. iText PDF
 - **Descrição**: A biblioteca iText permite criar e manipular documentos PDF programaticamente. Neste projeto, ela é utilizada para gerar PDFs a partir de HTML e converter o conteúdo da página para o formato PDF.
 - **Versão**: 5.5.13.2
-- **Documentação Oficial**: [iText PDF Documentation](https://itextpdf.com/en/resources/documentation)
+- **Documentação Oficial**: [iText PDF Documentation](https://itextpdf.com/resources/api-documentation)
 
 **Dependência Maven**:
 ```xml
@@ -114,7 +114,7 @@ Este projeto faz uso de várias bibliotecas para fornecer funcionalidades espec�
 ### 3. Jsoup
 - **Descrição**: O Jsoup é uma biblioteca Java para trabalhar com HTML. Ele permite analisar, manipular e limpar HTML de forma simples. No projeto, ele é utilizado para processar o conteúdo HTML da página antes de convertê-lo para PDF.
 - **Versão**: 1.17.2
-- **Documentação Oficial**: [Jsoup Documentation](https://jsoup.org/apidocs/)
+- **Documentação Oficial**: [Jsoup Documentation](https://jsoup.org/apidocs/org/jsoup/nodes/Document.html)
 
 **Dependência Maven**:
 ```xml
