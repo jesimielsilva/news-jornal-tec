@@ -20,38 +20,22 @@ public class PdfController {
 
     @PostMapping("/api/generate-pdf")
     public ResponseEntity<byte[]> generatePdf(@RequestBody Map<String, String> request) {
+        // Recupera o conteúdo HTML enviado no corpo da requisição como um mapa de pares chave-valor
         String htmlContent = request.get("html");
 
+        // Gera o PDF a partir do HTML usando o serviço PdfService
         byte[] pdfBytes = pdfService.generatePdfFromHtml(htmlContent);
 
+        // Criação de cabeçalhos HTTP para a resposta
         HttpHeaders headers = new HttpHeaders();
+        // Define o tipo de mídia da resposta como PDF
         headers.setContentType(MediaType.APPLICATION_PDF);
+        // Define o cabeçalho de disposição de conteúdo, sugerindo um nome para o arquivo de download (jornal-noticias.pdf)
         headers.setContentDispositionFormData("filename", "jornal-noticias.pdf");
 
+        // Retorna uma resposta com o código HTTP 200 (OK), os cabeçalhos e o corpo da resposta contendo o PDF em bytes
         return ResponseEntity.ok()
                 .headers(headers)
                 .body(pdfBytes);
     }
-
-//    private final PdfService pdfService;
-//
-//    public PdfController(PdfService pdfService) {
-//        this.pdfService = pdfService;
-//    }
-//
-//    @GetMapping("/api/generate-pdf")
-//    public ResponseEntity<byte[]> generatePdf() {
-//        String title = "Jornal de Notícias";
-//        String content = "Conteúdo dinâmico do jornal...";
-//
-//        byte[] pdfBytes = pdfService.generatePdf(title, content);
-//
-//        HttpHeaders headers = new HttpHeaders();
-//        headers.setContentType(MediaType.APPLICATION_PDF);
-//        headers.setContentDispositionFormData("filename", "jornal-noticias.pdf");
-//
-//        return ResponseEntity.ok()
-//                .headers(headers)
-//                .body(pdfBytes);
-//    }
 }
